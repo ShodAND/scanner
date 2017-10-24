@@ -15,7 +15,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
     ssh \
     git \
     vim \
-    ca-certificates
+    ca-certificates \
+    iputils-ping \
+    iptables 
 
 # Fetch github footprint
 RUN mkdir -p ~/.ssh && mkdir -p /opt
@@ -30,7 +32,7 @@ RUN ls -lah $SHODAND_SCANNER_PATH
 RUN apt-get install -y --no-install-recommends $(cat $SHODAND_SCANNER_PATH/DEPENDENCIES)
 
 # Make pbscan
-RUN cd $SHODAND_SCANNER_PATH && make
+#RUN cd $SHODAND_SCANNER_PATH && make
 
 # Run the scanner
 #CMD /opt/
