@@ -2,6 +2,8 @@
 
 Contains all the elements to quickly deploy a ShodAND Scanner.
 
+It deploys [pbscan](https://github.com/gvb84/pbscan) over [Docker](https://github.com/docker).
+
 ## 1) Install it
 
 Clone this repo:
