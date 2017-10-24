@@ -34,5 +34,8 @@ RUN apt-get install -y --no-install-recommends $(cat $SHODAND_SCANNER_PATH/DEPEN
 # Make pbscan
 RUN cd $SHODAND_SCANNER_PATH && make
 
+# Symlink bpscan to local bin path
+RUN ln -s /opt/pbscan/pbscan /usr/local/bin/
+
 # Run the scanner
 #CMD /opt/
