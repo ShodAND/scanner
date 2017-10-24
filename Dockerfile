@@ -38,4 +38,5 @@ RUN cd $SHODAND_SCANNER_PATH && make
 RUN ln -s /opt/pbscan/pbscan /usr/local/bin/
 
 # Run the scanner
-#CMD /opt/
+CMD ["/bin/bash"]
+
