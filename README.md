@@ -11,7 +11,16 @@ Clone this repo:
 $ git clone https://github.com/ShodAND/scanner.git
 ```
 
-It uses Docker, so the first step is to create the image:
+### Using Docker Compose
+
+Just call docker compose in run mode, and a shell will be returned:
+```
+$ docker-compose run scanner
+```
+
+### Manually using Docker
+
+First, create the image:
 ```
 $ bash build.sh
 ```
@@ -70,6 +79,4 @@ Send an initial TLS request to $IP using `-sT` instead of `-sB` :
 ```
 (scanner) $ pbscan -sT 80,443,22,53,8000-9000,9443,3000,5000 $IP
 ```
-
-
 
