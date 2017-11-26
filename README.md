@@ -2,7 +2,14 @@
 
 Contains all the elements to quickly deploy a ShodAND Scanner.
 
-It deploys [pbscan](https://github.com/gvb84/pbscan) over [Docker](https://github.com/docker).
+It deploys [pbscan](https://github.com/gvb84/pbscan) over [Docker](https://github.com/docker) and integrates the [commander]() and it's dependencies.
+
+The idea is to reach a wrapper that can process external messages (using Redis and zeromq), validate it and dispatch a pbscan exection.
+
+So far, the result is fetched and returned to the requester.
+
+Development in progress :)
+
 
 ## 1) Install it
 
@@ -13,12 +20,23 @@ $ git clone https://github.com/ShodAND/scanner.git
 
 ### Using Docker Compose
 
-Just call docker compose in run mode, and a shell will be returned:
+Just start our composition:
 ```
-$ docker-compose run scanner
+$ docker-compose up
 ```
 
-### Manually using Docker
+## 2) Install it
+
+To interact with the system, use the commander tool from the host:
+``` 
+$ python ./shodAND-commander/commander.py --host=localhost --receiver=tcp://localhost:9999 --command="pbscan -sB -p22,80,443 $IP/32"
+
+``` 
+
+
+# Old approach (Manually using Docker)
+
+## 1) Install it
 
 First, create the image:
 ```
