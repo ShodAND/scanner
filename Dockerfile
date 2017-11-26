@@ -43,6 +43,8 @@ ADD shodAND-commander/receiver.py /opt/commander/receiver.py
 ADD shodAND-commander/processor.py /opt/commander/processor.py
 ADD shodAND-commander/transmitter.py /opt/commander/transmitter.py
 
+RUN pip install -r /opt/commander/requirements.txt
+
 # Run the scanner
 CMD ["/bin/bash"]
 
