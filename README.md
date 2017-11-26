@@ -18,20 +18,19 @@ Clone this repo:
 $ git clone https://github.com/ShodAND/scanner.git
 ```
 
-### Using Docker Compose
-
 Just start our composition:
 ```
 $ docker-compose up
 ```
 
-## 2) Install it
+## 2) Use it
 
 To interact with the system, use the commander tool from the host:
 ``` 
 $ python ./shodAND-commander/commander.py --host=localhost --receiver=tcp://localhost:9999 --command="pbscan -sB -p22,80,443 $IP/32"
-
 ``` 
+
+This will trigger a request to commander with a pbscan execution
 
 
 # Old approach (Manually using Docker)
