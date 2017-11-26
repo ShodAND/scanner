@@ -2,7 +2,7 @@
 
 Contains all the elements to quickly deploy a ShodAND Scanner.
 
-It deploys [pbscan](https://github.com/gvb84/pbscan) over [Docker](https://github.com/docker) and integrates the [commander]() and it's dependencies.
+It deploys [pbscan](https://github.com/gvb84/pbscan) over [Docker](https://github.com/docker) and integrates the [commander](https://github.com/pete0emerson/commander) and it's dependencies.
 
 The idea is to reach a wrapper that can process external messages (using Redis and zeromq), validate it and dispatch a pbscan exection.
 
