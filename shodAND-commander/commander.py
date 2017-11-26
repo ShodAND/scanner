@@ -15,7 +15,7 @@ group.add_argument('--command', dest='command', help='The command to be run')
 group.add_argument('--code', dest='code', help='File to be injected and run')
 args = parser.parse_args()
 
-r = redis.Redis("redis")
+r = redis.Redis("localhost")
 
 def createJob(r, hosts, command, code, receiver):
 	job_id = r.incr('job_id')
