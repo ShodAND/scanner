@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
     vim \
     ca-certificates \
     iputils-ping \
-    iptables
+    iptables \
+    python \
+    python-pip
 
 # Fetch github footprint
 RUN mkdir -p ~/.ssh && mkdir -p /opt
