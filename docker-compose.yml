@@ -1,7 +1,7 @@
 version: '3'
 services:
   scanner:
-    image: "shodand/scanner"
+    build: .
     cap_add:
       - NET_ADMIN
     stdin_open: true
