@@ -46,8 +46,4 @@ ADD shodAND-commander/processor.py /opt/commander/processor.py
 ADD shodAND-commander/transmitter.py /opt/commander/transmitter.py
 
 RUN pip install -r /opt/commander/requirements.txt
-RUN bash /opt/commander/start.sh 
-
-# Run the scanner
-CMD ["/bin/bash"]
-
+ENTRYPOINT bash /opt/commander/start.sh && /bin/bash
