@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
     vim \
     ca-certificates \
     iputils-ping \
-    iptables 
+    iptables \
+    python \
+    python-pip
 
 # Fetch github footprint
 RUN mkdir -p ~/.ssh && mkdir -p /opt
@@ -37,6 +39,11 @@ RUN cd $SHODAND_SCANNER_PATH && make
 # Symlink bpscan to local bin path
 RUN ln -s /opt/pbscan/pbscan /usr/local/bin/
 
-# Run the scanner
-CMD ["/bin/bash"]
+ADD shodAND-commander/requirements.txt /opt/commander/requirements.txt
+ADD shodAND-commander/start.sh /opt/commander/start.sh
+ADD shodAND-commander/receiver.py /opt/commander/receiver.py
+ADD shodAND-commander/processor.py /opt/commander/processor.py
+ADD shodAND-commander/transmitter.py /opt/commander/transmitter.py
 
+RUN pip install -r /opt/commander/requirements.txt
+ENTRYPOINT bash /opt/commander/start.sh && /bin/bash
